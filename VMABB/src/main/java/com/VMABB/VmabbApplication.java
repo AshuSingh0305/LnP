@@ -12,6 +12,7 @@ public class VmabbApplication {
 		SpringApplication.run(VmabbApplication.class, args);
 		Ashu ashu = new Ashu();
 		ashu.start();
+		System.out.println("yo mama fat");
 	}
 
 }
