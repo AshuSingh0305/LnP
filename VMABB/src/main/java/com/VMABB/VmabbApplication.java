@@ -8,6 +8,7 @@ public class VmabbApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VmabbApplication.class, args);
+		System.out.print("Lessgo!!");
 	}
 
 }
