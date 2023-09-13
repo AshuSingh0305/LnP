@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/newproposal.css">
+    <title>New Proposal Page</title>
+</head>
+<body>
+    <h1>New Proposal Page - Term Insurance</h1>
+    <form id="proposalForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="tobacco">Do You Consume Tobacco?</label>
+        <input type="radio" id="tobaccoYes" name="tobacco" value="yes" required>
+        <label for="tobaccoYes">Yes</label>
+        <input type="radio" id="tobaccoNo" name="tobacco" value="no" required>
+        <label for="tobaccoNo">No</label>
+
+        <label for="annualIncome">Annual Income:</label>
+        <input type="number" id="annualIncome" name="annualIncome" required>
+
+        <label for="lifeCoverAmount">Life Cover Amount (up to 3 Crores):</label>
+        <input type="number" id="lifeCoverAmount" name="lifeCoverAmount" min="0" max="30000000" required>
+
+        <label for="lifeCoverAge">Life Cover Up to Age (up to 100 years):</label>
+        <input type="number" id="lifeCoverAge" name="lifeCoverAge" min="18" max="100" required>
+
+        <div id="premiumDisplay">Initial Premium: $0.00</div>
+        <button type="submit">Create Proposal</button>
+    </form>
+    <script src="/js/newproposal.js"></script>
+</body>
+</html>
