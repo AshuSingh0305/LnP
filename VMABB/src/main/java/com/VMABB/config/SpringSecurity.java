@@ -30,13 +30,12 @@ public class SpringSecurity {
 	        .csrf().disable()
 	        .authorizeHttpRequests((authorize) ->
 	            authorize
-	                .requestMatchers("/register/**").permitAll()
-	                .requestMatchers("/index").permitAll()
-	                .requestMatchers("/view").hasRole("ADMIN")
-	                .requestMatchers("/view").authenticated()
-	                .requestMatchers("/new-proposal").hasRole("ADMIN")
-	                .requestMatchers("/calculate-premium").hasRole("ADMIN")
-	        )
+	            .requestMatchers("/register/**").permitAll()
+                .requestMatchers("/index").permitAll()
+                .requestMatchers("/new-proposal").hasRole("ADMIN")
+                .requestMatchers("/view").hasAnyRole("ADMIN", "USER") // Allow both ADMIN and USER roles
+                .anyRequest().authenticated() // All other requests require authentication
+        )
 	        .formLogin(form -> form
 	            .loginPage("/login")
 	            .loginProcessingUrl("/login")
@@ -44,8 +43,8 @@ public class SpringSecurity {
 	            .permitAll()
 	        )
 	        .logout(logout -> logout
-	            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-	            .permitAll()
+	                .logoutUrl("/logout") // Specify the logout URL
+	                .logoutSuccessUrl("/login")
 	        );
 	    return http.build();
 	}
