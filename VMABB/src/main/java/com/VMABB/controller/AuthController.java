@@ -31,6 +31,12 @@ public class AuthController {
     public String loginForm() {
         return "login";
     }
+    
+    @PostMapping("/login")
+    public String loginSuccess() {
+        // Redirect to the Client Dashboard page after successful login
+        return "redirect:/view";
+    }
 
     // handler method to handle user registration request
     @GetMapping("register")
