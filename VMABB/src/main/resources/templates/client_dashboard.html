@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Client Dashboard</title>
+	<link rel="stylesheet" th:href="@{/css/client_dashboard.css}">
+</head>
+
+<body>
+	<h1>Client Dashboard</h1>
+
+	<!-- Form for adding policies -->
+	<form id="addPolicyForm">
+		<label for="policyTypeInput">Policy Type:</label>
+		<select id="policyTypeInput" required>
+			<option value="Term Insurance">Term Insurance</option>
+			<option value="Whole Life">Whole Life</option>
+			<option value="Moneyback">Moneyback</option>
+			<option value="Endowment">Endowment</option>
+		</select>
+		<label for="holderNameInput">Holder's Name:</label>
+		<input type="text" id="holderNameInput" required>
+		<button type="submit">Add Policy</button>
+	</form>
+	<br>
+	<a href="/new-proposal" class="button">Create New Proposal</a>
+
+	<!-- Policy List -->
+	<h2>Policy List</h2>
+
+	<ul id="policyList">
+		<!-- Policies will be displayed here -->
+
+	</ul>
+	<!-- Loop through the list of policies and display them -->
+	<ul>
+		<li th:each="policy : ${policies}">
+			<!-- Display policy details -->
+			<span th:text="${policy.getToi()}"></span> - Holder: <span th:text="${policy.getName()}"></span>
+		</li>
+	</ul>
+
+
+	<script th:src="@{/js/client-dashboard.js}"></script>
+</body>
+
+</html>
