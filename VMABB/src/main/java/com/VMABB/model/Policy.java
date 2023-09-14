@@ -3,31 +3,32 @@
 package com.VMABB.model;
 
 public class Policy {
-	int id;
-	String name;
-	String toi;
+	int client_id;
+	String policyHoldername;
+	String policyType;
 	public Policy(int i, String string, String string2) {
-	    this.id=i;
-	    this.toi=string;
-	    this.name=string2;
+	    this.client_id=i;
+	    this.policyType=string;
+	    this.policyHoldername=string2;
 	    }
-	public int getId() {
-		return id;
+	public int getclient_Id() {
+		return client_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setclient_Id(int id) {
+		this.client_id = id;
+		
 	}
-	public String getName() {
-		return name;
+	public String getpolicyHoldername() {
+		return policyHoldername;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setpolicyHoldername(String policyHoldername) {
+		this.policyHoldername = policyHoldername;
 	}
-	public String getToi() {
-		return toi;
+	public String getpolicyType() {
+		return policyType;
 	}
-	public void setToi(String toi) {
-		this.toi = toi;
+	public void setpolicyType(String policyType) {
+		this.policyType = policyType;
 	}
 
 
