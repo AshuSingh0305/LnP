@@ -5,18 +5,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link th:href="@{/css/newproposal.css}" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<title>New Proposal Page</title>
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,6 +30,9 @@
 	<h1>New Proposal Page - Term Insurance</h1>
 	<form id="proposalForm" th:action="@{/calculate-premium}" method="POST">
 		<input type="hidden" id="isSmoker" name="isSmoker" th:value="false">
+		<label for="proposalName">Proposal Name:</label>
+		<input type="text" id="proposalName" name="proposalName" required>
+		<br>
 		<label for="firstName">First Name:</label>
 		<input type="text" id="firstName" name="firstName" required>
 		<br>
@@ -144,9 +146,11 @@
 
 		<div id="premiumDisplay">Initial Premium: $0.00</div>
 		<br>
-		<button type="submit">Calculate Premium</button>
+		<button type="submit" id="calculatePremiumButton">Calculate Premium</button>
 		<br>
+		<button type="button" id="finalSubmitButton" style="display: none;">Final Submit</button>
 		<br>
+
 	</form>
 	<script th:src="@{/js/newproposal.js}"></script>
 </body>

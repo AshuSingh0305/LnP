@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="/css/approvedPolicies.css"> <!-- Link to your CSS file -->
+
+	<script src="/js/adminDashboard.js"></script>
+
+	<title>Rejected Policies</title>
+
+</head>
+
+
+
+<body>
+
+	<div class="container">
+
+		<h1>Rejected Policies</h1>
+
+		<table>
+
+			<thead>
+
+				<tr>
+
+					<th>Proposal ID</th>
+
+					<th>Policy Holder Name</th>
+
+					<th>Policy Type</th>
+
+					<th>Status</th>
+
+					<th>Policy ID</th>
+
+				</tr>
+
+			</thead>
+
+			<tbody>
+
+				<!-- Use Thymeleaf to populate the table -->
+
+				<tr th:each="policy : ${rejectedPolicies}">
+
+					<td th:text="${policy.proposalId}"></td>
+
+					<td th:text="${policy.policyHoldername}"></td>
+
+					<td th:text="${policy.policyType}"></td>
+
+					<td th:text="${policy.status}"></td>
+
+					<td th:text="${policy.policyId}"></td>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+</body>
+
+
+
+</html>
+
