@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link th:href="@{/css/newproposal.css}" rel="stylesheet">
+	<title>New Proposal Page</title>
+</head>
+
+<body>
+	<h1>New Proposal Page - Term Insurance</h1>
+	<form id="proposalForm" th:action="@{/calculate-premium}" method="POST">
+		<input type="hidden" id="isSmoker" name="isSmoker" th:value="false">
+		<label for="firstName">First Name:</label>
+		<input type="text" id="firstName" name="firstName" required>
+		<br>
+
+		<label for="lastName">Last Name:</label>
+		<input type="text" id="lastName" name="lastName" required>
+		<br>
+
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob" required>
+		<br>
+
+		<label for="email">E-Mail:</label>
+		<input type="email" id="email" name="email" required>
+		<br>
+
+		<label for="mobile">Mobile Number:</label>
+		<input type="tel" id="mobile" name="mobile" required>
+		<br>
+
+		<label for="gender">Gender:</label>
+		<select id="gender" name="gender" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="other">Other</option>
+		</select>
+		<br>
+
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age" required>
+		<br>
+
+		<label for="tobacco">Do You Consume Tobacco?</label>
+		<input type="radio" id="tobaccoYes" name="tobacco" th:value="yes" required>
+		<label for="tobaccoYes">Yes</label>
+		<input type="radio" id="tobaccoNo" name="tobacco" th:value="no" required>
+		<label for="tobaccoNo">No</label>
+		<br>
+		<script>
+			// JavaScript code to update isSmoker based on tobacco selection
+			const tobaccoYes = document.getElementById("tobaccoYes");
+			const isSmokerInput = document.getElementById("isSmoker");
+
+			tobaccoYes.addEventListener("change", function () {
+				if (tobaccoYes.checked) {
+					isSmokerInput.value = "true";
+				} else {
+					isSmokerInput.value = "false";
+				}
+			});
+		</script>
+
+		<label for="annualIncome">Annual Income:</label>
+		<input type="number" id="annualIncome" name="annualIncome" required>
+		<br>
+
+		<label for="lifeCoverAmount">Life Cover Amount (up to 3 Crores):</label>
+		<input type="number" id="lifeCoverAmount" name="lifeCoverAmount" min="0" max="30000000" required>
+		<br>
+
+		<label for="lifeCoverAge">Life Cover Up to Age (up to 100 years):</label>
+		<input type="number" id="lifeCoverAge" name="lifeCoverAge" min="18" max="100" required>
+		<br>
+
+
+		<div id="premiumDisplay">Initial Premium: $0.00</div>
+        <br>
+        <button type="submit">Calculate Premium</button>
+        <br>
+		<br>
+	</form>
+	<script th:src="@{/js/newproposal.js}"></script>
+</body>
+
+</html>
