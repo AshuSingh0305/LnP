@@ -176,6 +176,14 @@ public class PolicyServiceImpl implements PolicyService {
 
 	}
 
+
+
+	@Override
+	public Policy getPolicyByClientId(int clientId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
  
 
  

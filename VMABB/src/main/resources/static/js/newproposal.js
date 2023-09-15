@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Function to calculate Payment Tenure Adjustment
 	function paymentTenureAdjustment(PaymentTenure) {
-		// Customize this adjustment logic based on your requirements
-		return PaymentTenure * 5; // Example adjustment
+		// Customize this adjustment logic based on requirements
+		return PaymentTenure * 5; 
 	}
 
 	// Function to calculate Premium Reduction Based on Payment Mode
@@ -108,10 +108,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			const responseData = await response.json();
 
-			// Handle the response (e.g., display a success message)
+			// Handle the response 
 			if (responseData.proposalId) {
 				alert("Proposal submitted successfully with Proposal ID: " + responseData.proposalId);
-				// You can redirect or perform other actions here
+				
 			} else {
 				throw new Error("Proposal submission failed.");
 			}

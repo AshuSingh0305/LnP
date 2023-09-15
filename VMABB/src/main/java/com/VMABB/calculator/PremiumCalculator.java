@@ -53,17 +53,17 @@ public class PremiumCalculator {
 		}
 
 		
-		// City-based premium adjustment (Example: Additional premium for a high-risk city)
+		// City-based premium adjustment (Additional premium for a high-risk city)
 		if (city.equals("HighRiskCity")) {
 			basePremium += 50;
 		}
 
-		// Qualification-based premium adjustment (Example: Additional premium for lower qualification)
+		// Qualification-based premium adjustment (Additional premium for lower qualification)
 		if (qualification.equals("LowQualification")) {
 			basePremium += 20;
 		}
 
-		// Occupation-based premium adjustment (Example: Additional premium for high-risk occupation)
+		// Occupation-based premium adjustment (Additional premium for high-risk occupation)
 		if (occupation.equals("HighRiskOccupation")) {
 			basePremium += 40;
 		}

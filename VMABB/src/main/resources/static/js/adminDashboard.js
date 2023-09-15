@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const approvedLink = document.getElementById("approvedLink");
         const rejectedLink = document.getElementById("rejectedLink");
 
-        // Add click event listeners to the links
+        //  click event listeners to the links
         pendingLink.addEventListener("click", function () {
             // Redirect to the pending policies page
             window.location.href = "/AdminDashboard/pendingPolicies";
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle changing the status of a policy
     function changeStatus(proposalId, newStatus) {
-        // Send an AJAX request to update the policy status
+        // Sending an AJAX request to update the policy status
         fetch(`/AdminDashboard/pendingPolicies/changeStatus/${proposalId}?status=${newStatus}`, {
             method: 'POST',
         })
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Get references to the approve buttons on both pages
         const approveButtons = document.querySelectorAll('.approve-button');
 
-        // Add click event listeners to the approve buttons
+        // click event listeners to the approve buttons
         approveButtons.forEach(button => {
             button.addEventListener('click', function () {
                 const proposalId = button.getAttribute('data-proposal-id');
@@ -72,6 +72,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Call the function to set up event listeners for approve buttons
     setupEventListeners();
 });

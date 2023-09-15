@@ -61,7 +61,6 @@ public class Proposal {
     
     private double premium;
 
-    // Add more fields as needed...
 
     public Proposal() {
         // Default constructor
@@ -94,7 +93,6 @@ public class Proposal {
         this.qualification = qualification;
         this.occupation = occupation;
         this.paymentMode = paymentMode;
-        // Initialize other fields as needed...
     }
 
     // Getter and Setter methods for all fields
@@ -219,5 +217,4 @@ public class Proposal {
         this.paymentMode = paymentMode;
     }
 
-    // Add getter and setter methods for other fields as needed...
 }
