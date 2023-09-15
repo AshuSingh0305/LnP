@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			premium: parseFloat(premiumDisplay.textContent.split("$")[1]), // Extract and parse premium value
 		};
 		console.log(proposalData);
-/*
+
 		try {
 			// Send the proposal data to your server for processing and database storage
 			const response = await fetch("/proposals/create", {
@@ -119,6 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			console.error("Error submitting proposal:", error);
 			alert("Error submitting proposal. Please try again later.");
 		}
-		*/
+		
 	});
 });

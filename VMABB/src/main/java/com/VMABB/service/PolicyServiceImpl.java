@@ -1,5 +1,7 @@
 package com.VMABB.service;
 
+ 
+
 //<<<<<<< Updated upstream
 
 // Add other methods for policy-related operations here
@@ -10,136 +12,174 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+ 
+
 import org.springframework.stereotype.Service;
+
+ 
 
 import com.VMABB.exception.PolicyNotFoundException;
 
 import com.VMABB.model.Policy;
 
+ 
+
 @Service
 
 public class PolicyServiceImpl implements PolicyService {
 
-	// private final List<Policy> policies = new ArrayList<>();
+	
 
-	@Override
+	//private final List<Policy> policies = new ArrayList<>();
 
-	public List<Policy> getAllPolicies() {
+ 
 
-		return policies;
+ 
 
-	}
+ 
+
+    @Override
+
+    public List<Policy> getAllPolicies() {
+
+        return policies;
+
+    }
+
+	
 
 	private final List<Policy> policies = new ArrayList<>();
 
 	private int lastGeneratedPolicyId = 7366;
 
+	
+
 	public PolicyServiceImpl() {
 
 		policies.add(new Policy(1, "Term Insurance", "John Doe"));
 
-		policies.add(new Policy(1, "Gloria", "Term Insurance", "pending", 0));
+		policies.add(new Policy(1,"Gloria","Term Insurance","pending",0));
 
-		policies.add(new Policy(2, "Jay", "Term Insurance", "approved", 7123));
+		policies.add(new Policy(2,"Jay","Term Insurance","approved",7123));
 
-		policies.add(new Policy(3, "Manny", "Term Insurance", "rejected", 7364));
+		policies.add(new Policy(3,"Manny","Term Insurance","rejected",7364));
+
+		
 
 	}
+
+	
 
 	@Override
 
 	public List<Policy> getPendingPolicies() {
 
-		List<Policy> pendingPolicies = new ArrayList<>();
+	    List<Policy> pendingPolicies = new ArrayList<>();
 
-		for (Policy policy : policies) {
+	    for (Policy policy : policies) {
 
-			if ("pending".equalsIgnoreCase(policy.getStatus())) {
+	        if ("pending".equalsIgnoreCase(policy.getStatus())) {
 
-				pendingPolicies.add(policy);
+	            pendingPolicies.add(policy);
 
-			}
+	        }
 
-		}
+	    }
 
-		return pendingPolicies;
+	    return pendingPolicies;
 
 	}
+
+ 
 
 	@Override
 
 	public List<Policy> getApprovedPolicies() {
 
-		List<Policy> approvedPolicies = new ArrayList<>();
+	    List<Policy> approvedPolicies = new ArrayList<>();
 
-		for (Policy policy : policies) {
+	    for (Policy policy : policies) {
 
-			if ("approved".equalsIgnoreCase(policy.getStatus())) {
+	        if ("approved".equalsIgnoreCase(policy.getStatus())) {
 
-				approvedPolicies.add(policy);
+	            approvedPolicies.add(policy);
 
-			}
+	        }
 
-		}
+	    }
 
-		return approvedPolicies;
+	    return approvedPolicies;
 
 	}
+
+	
 
 	@Override
 
 	public List<Policy> getRejectedPolicies() {
 
-		List<Policy> rejectedPolicies = new ArrayList<>();
+	    List<Policy> rejectedPolicies = new ArrayList<>();
 
-		for (Policy policy : policies) {
+	    for (Policy policy : policies) {
 
-			if ("rejected".equalsIgnoreCase(policy.getStatus())) {
+	        if ("rejected".equalsIgnoreCase(policy.getStatus())) {
 
-				rejectedPolicies.add(policy);
+	            rejectedPolicies.add(policy);
 
-			}
+	        }
 
-		}
+	    }
 
-		return rejectedPolicies;
+	    return rejectedPolicies;
 
 	}
+
+ 
 
 	@Override
 
-	public Policy updatePolicyStatus(Long proposalId, String status) {
+    public Policy updatePolicyStatus(Long proposalId, String status) {
 
-		// Find the policy with the given proposalId and update its status
+        // Find the policy with the given proposalId and update its status
 
-		for (Policy policy : policies) {
+        for (Policy policy : policies) {
 
-			if (policy.getProposalId() == proposalId) {
+            if (policy.getProposalId() == proposalId) {
 
-				policy.setStatus(status);
+                policy.setStatus(status);
 
-				// Generate a 4-digit policy ID if the status is "approved"
+ 
 
-				if ("approved".equalsIgnoreCase(status)) {
+                // Generate a 4-digit policy ID if the status is "approved"
 
-					// Increment the lastGeneratedPolicyId
+                if ("approved".equalsIgnoreCase(status)) {
 
-					lastGeneratedPolicyId++;
+                    // Increment the lastGeneratedPolicyId
 
-					// Set the generated policy ID
+                    lastGeneratedPolicyId++;
 
-					policy.setPolicyId(lastGeneratedPolicyId);
+                    // Set the generated policy ID
 
-				}
+                    policy.setPolicyId(lastGeneratedPolicyId);
 
-				return policy; // Return the updated policy
+                }
 
-			}
+ 
 
-		}
+                return policy; // Return the updated policy
 
-		throw new PolicyNotFoundException("Policy not found for proposalId");
+            }
+
+        }
+
+        throw new PolicyNotFoundException("Policy not found for proposalId");
 
 	}
 
+ 
+
+ 
+
 }
+
+ 

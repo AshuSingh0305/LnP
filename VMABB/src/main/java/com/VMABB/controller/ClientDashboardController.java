@@ -29,7 +29,7 @@ public class ClientDashboardController {
         // Add the list of policies to the model
         model.addAttribute("policies", policies);
 
-        return "client_dashboard"; // This should match your HTML template name
+        return "client_dashboard";
     }
 //    @GetMapping("/new-proposal")
 //    public String viewNewProposalForm(Model model) {

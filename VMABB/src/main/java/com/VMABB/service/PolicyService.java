@@ -1,29 +1,28 @@
 package com.VMABB.service;
-
-import java.util.List;
-
-//<<<<<<< Updated upstream
-
-import com.VMABB.model.Policy;
-
-//=======
-
 import java.util.List;
 
 import com.VMABB.model.Policy;
 
 public interface PolicyService {
-
 	List<Policy> getPendingPolicies();
+
+	 
 
 	List<Policy> getApprovedPolicies();
 
+ 
+
 	List<Policy> getRejectedPolicies();
 
+ 
+
 	Policy updatePolicyStatus(Long proposalId, String status);
+	
+    List<Policy> getAllPolicies();
 
-	List<Policy> getAllPolicies();
+   // Policy getPolicyById(int policyId);
 
-//>>>>>>> Stashed changes
+   
 
+    // Add other policy-related methods as needed
 }

@@ -49,14 +49,11 @@
 	<h2>Policy List</h2>
 
 	<ul id="policyList">
-		<!-- Policies will be displayed here -->
-
-	</ul>
-	<!-- Loop through the list of policies and display them -->
-	<ul>
+		<!-- Loop through the list of policies and display them -->
 		<li th:each="policy : ${policies}">
 			<!-- Display policy details -->
-			<span th:text="${policy.getpolicyType()}"></span> - Holder: <span th:text="${policy.getpolicyHoldername()}"></span>
+			<span th:text="${policy.getPolicyType()}"></span> - Holder: <span
+				th:text="${policy.getPolicyHoldername()}"></span>
 		</li>
 	</ul>
 
