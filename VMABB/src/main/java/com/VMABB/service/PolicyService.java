@@ -20,6 +20,10 @@ public interface PolicyService {
 	
     List<Policy> getAllPolicies();
 
+
+
+	Policy getPolicyByClientId(int clientId);
+
    // Policy getPolicyById(int policyId);
 
    

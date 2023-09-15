@@ -35,7 +35,6 @@ import com.VMABB.service.PolicyService;
  
 
 @Controller
-//@RequestMapping("/adminDashboard")
 public class AdminController {
 
 	@Autowired
@@ -57,11 +56,11 @@ public class AdminController {
     @RequestMapping("/AdminDashboard/pendingPolicies")
     public String getPendingPolicies(Model model) {
         model.addAttribute("pendingPolicies", policyService.getPendingPolicies());
-        return "pendingPolicies"; // Return the name of the HTML template for pending policies
+        return "pendingPolicies"; 
     }
 
     @PostMapping("/AdminDashboard/pendingPolicies/changeStatus/{proposalId}")
-    @ResponseBody // Ensure this method returns a JSON response
+    @ResponseBody 
     public ResponseEntity<Map<String, Object>> changeStatus(
         @PathVariable Long proposalId,
         @RequestParam String status
@@ -87,7 +86,7 @@ public class AdminController {
     @RequestMapping("/AdminDashboard/approvedPolicies")
     public String getApprovedPolicies(Model model) {
         model.addAttribute("approvedPolicies", policyService.getApprovedPolicies());
-        return "approvedPolicies"; // Return the name of the HTML template for approved policies
+        return "approvedPolicies"; 
     }
 
  
@@ -95,7 +94,7 @@ public class AdminController {
     @RequestMapping("/AdminDashboard/rejectedPolicies")
     public String getRejectedPolicies(Model model) {
         model.addAttribute("rejectedPolicies", policyService.getRejectedPolicies());
-        return "rejectedPolicies"; // Return the name of the HTML template for rejected policies
+        return "rejectedPolicies"; 
     }
 
  

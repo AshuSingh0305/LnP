@@ -1,24 +1,83 @@
+/* Apply CSS styles to the body */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }
 
+/* Style the header */
 h1 {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 20px 0;
 }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
+/* Style the navigation bar */
+.navbar {
+    background-color: #333;
 }
 
-label, input, select, button {
-    display: block;
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Style the main form container */
+#proposalForm {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style form labels and input fields */
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
+/* Style radio buttons */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style the premium display div */
 #premiumDisplay {
     font-weight: bold;
-    color: green;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the buttons */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Style the final submit button */
+#finalSubmitButton {
+    background-color: #28a745; /* Green color for final submit */
+    display: none; /* Hidden by default */
 }

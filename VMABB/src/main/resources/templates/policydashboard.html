@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Client Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Proposal ID</th>
+                <th>Policy Holder Name</th>
+                <th>Policy Type</th>
+                <th>Status</th>
+                <th>Action 1</th>
+                <th>Action 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${clientPolicy.clientId}"></td>
+                <td th:text="${clientPolicy.policyHoldername}"></td>
+                <td th:text="${clientPolicy.policyType}"></td>
+                <td th:text="${clientPolicy.status}"></td>
+                <td>
+                    <form th:action="@{'/cancelPolicy/' + ${clientPolicy.clientId}}" method="post">
+                        <button type="submit">Cancel</button>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{'/policyupdate/' + ${clientPolicy.clientId}}" method="get">
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
